@@ -87,6 +87,21 @@
         .result-card a:hover {
             text-decoration: underline;
         }
+        .back-button {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background-color: #ffa500;
+            color: #121212;
+            font-weight: 500;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            max-width: 200px;
+        }
+        .back-button:hover {
+            background-color: #e69500;
+        }
     </style>
 </head>
 <body>
@@ -119,15 +134,24 @@
         <h3 class="text-center mb-4">Type something to start your search.</h3>
     </div>
 
+    <!-- Back Button -->
+    <div class="container text-center">
+        <a href="home.html" class="back-button">Back to Home</a>
+    </div>
+
     <!-- Inline JavaScript for Search -->
     <script>
         // Mock data for the search
         const searchData = [
             { name: "Features", link: "Features.html" },
             { name: "Online Games", link: "Games.html" },
-	    { name: "Home", link: "home.html" },
-	    { name: "Legacy Games", link: "claxhome.html" },
-	    { name: "Exploits", link: "Exploits.html" },
+	        { name: "Home", link: "home.html" },
+	        { name: "Legacy Games", link: "claxhome.html" },
+	        { name: "Old Games", link: "claxhome.html" },
+	        { name: "Exploits", link: "Exploits.html" },
+	        { name: "Cheats", link: "Exploits.html" },
+	        { name: "Scripts", link: "Scripts.html" },
+	        { name: "Old Scripts", link: "script.html" },
             { name: "Roblox Scripts", link: "Scripts.html" }
         ];
 
