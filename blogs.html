@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>✨Limits Amazing Website!✨ - Blogs</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #eaeaea;
+            font-family: 'Roboto', sans-serif;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        /* Animation for fading and moving up */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            background-color: #1f1f1f;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .navbar-brand, .nav-link {
+            color: #eaeaea !important;
+        }
+        .nav-link:hover {
+            color: #ffa500 !important;
+        }
+        .form-control {
+            background-color: #2a2a2a;
+            border: none;
+            color: #eaeaea;
+            border-radius: 20px;
+            padding-left: 20px;
+        }
+        .form-control::placeholder {
+            color: #b0b0b0; /* Placeholder color */
+        }
+        .form-control:focus {
+            border: 1px solid #ffa500;
+            box-shadow: none;
+        }
+        .btn-custom {
+            background-color: #ffa500;
+            border-color: #ffa500;
+            color: #121212;
+            font-weight: 500;
+        }
+        .btn-custom:hover {
+            background-color: #e69500;
+            border-color: #e69500;
+        }
+.blog-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.blog-thumbnail {
+    width: 100%; /* Make the image take full width of the container */
+    height: 150px;
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+.blog-card-body {
+    padding: 20px;
+}
+.blog-card-body h2 {
+    color: #ffa500;
+}
+.card-header {
+            background-color: #333333;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        footer {
+            background-color: #1f1f1f;
+            color: #b0b0b0;
+            border-top: 1px solid #333333;
+        }
+        footer p {
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">✨Limits Amazing Website!✨</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Search Bar -->
+                <form class="d-flex ms-auto" role="search" id="searchForm">
+                    <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-custom" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Games.html">Online Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Exploits.html">Exploits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Scripts.html">Scripts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blogs.html">Blogs</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Listing Content -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Blogs - ✨Limits Amazing Website!✨</h1>
+        
+        <div class="row">
+            <!-- Blog Card 1 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="Images/blog1.png" alt="blog1" class="blog-thumbnail">
+                    <div class="blog-card-body">
+                        <h2><a href="blogs/blog1.html">Test Blog</a></h2>
+                        <p>A simple test blog demonstrating how pages will look and function.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="Images/blog2.png" alt="Never Share Your Password" class="blog-thumbnail">
+                    <div class="blog-card-body">
+                        <h2><a href="blogs/blog2.html">How to Secure Your Roblox Account</a></h2>
+                        <p>Important tips on how to secure your Roblox account from potential hacks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="col-md-4">
+                <div class="blog-card">
+                    <img src="Images/blog3.png" alt="Turn on 2-Step Verification" class="blog-thumbnail">
+                    <div class="blog-card-body">
+                        <h2><a href="blogs/blog3.html">How to Exploit on Roblox Using Our Scripts</a></h2>
+                        <p>Learn about exploiting Roblox and using scripts effectively for various purposes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ✨Limits Amazing Website!✨. All Rights Reserved. (NotRealCompany)</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Search Functionality -->
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            window.location.href = `./search.html?q=${encodeURIComponent(query)}`;
+ 
