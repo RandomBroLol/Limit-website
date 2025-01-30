@@ -5,96 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>✨Limits Amazing Website!✨</title>
-    <!-- Google Fonts for better typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #ffa500;
+            --hover-color: #ff8c00;
+            --background: #121212;
+            --card-bg: #2a2a2a;
+            --text: #eaeaea;
+        }
+
         body {
-            background-color: #121212;
-            color: #eaeaea;
+            background-color: var(--background);
+            color: var(--text);
             font-family: 'Roboto', sans-serif;
             opacity: 0;
             animation: fadeInUp 1s forwards;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Animation for fading and moving up */
+        /* Gradient background animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 165, 0, 0.1),
+                rgba(255, 140, 0, 0.1),
+                rgba(255, 69, 0, 0.1)
+            );
+            z-index: -1;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Enhanced fade in animation */
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(30px) scale(0.95);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
+        /* Smooth hover transitions */
+        .navbar-brand, .nav-link, .btn-custom, .card {
+            transition: all 0.3s ease-in-out;
+        }
+
         .navbar {
-            background-color: #1f1f1f;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background-color: rgba(31, 31, 31, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
         }
-        .navbar-brand, .nav-link {
-            color: #eaeaea !important;
+
+        .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            background: linear-gradient(45deg, var(--primary-color), var(--hover-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
         }
-        .nav-link:hover {
-            color: #ffa500 !important;
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
         }
-        .form-control {
-            background-color: #2a2a2a;
-            border: none;
-            color: #eaeaea; /* Updated to match page text color */
-            border-radius: 20px;
-            padding-left: 20px;
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
         }
-        .form-control::placeholder {
-            color: #b0b0b0; /* Placeholder color */
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
         }
-        .form-control:focus {
-            border: 1px solid #ffa500;
-            box-shadow: none;
-        }
+
+ /* Make search box text white */
+.form-control {
+    color: white !important; /* Ensures text is white when typing */
+    background-color: rgba(42, 42, 42, 0.8);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 165, 0, 0.1);
+    border-radius: 20px;
+    padding: 0.75rem 1.25rem;
+    transition: all 0.3s ease;
+}
+
+/* Make placeholder text a lighter white */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light grey for contrast */
+}
+
+/* Ensure text remains white on focus */
+.form-control:focus {
+    color: white !important; /* Keeps text white when typing */
+    background-color: rgba(42, 42, 42, 0.95);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+
         .btn-custom {
-            background-color: #ffa500;
-            border-color: #ffa500;
-            color: #121212;
-            font-weight: 500;
-        }
-        .btn-custom:hover {
-            background-color: #e69500;
-            border-color: #e69500;
-        }
-        .card {
-            background-color: #2a2a2a;
+            background: linear-gradient(45deg, var(--primary-color), var(--hover-color));
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
+            border-radius: 20px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(255, 165, 0, 0.2);
         }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 165, 0, 0.3);
+        }
+
+        .card {
+            background: linear-gradient(145deg, rgba(42, 42, 42, 0.9), rgba(31, 31, 31, 0.9));
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform-origin: center;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(255, 165, 0, 0.15);
+        }
+
         .card-header {
-            background-color: #333333;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            background: linear-gradient(45deg, rgba(51, 51, 51, 0.9), rgba(42, 42, 42, 0.9));
+            border-radius: 15px 15px 0 0 !important;
+            border-bottom: 1px solid rgba(255, 165, 0, 0.1);
         }
+
+        .card-text {
+    color: white; /* Ensures text is white */
+}
+
+
         .card-title {
-            color: #ffffff;
-            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
             font-weight: 600;
         }
-        .card-text {
-            color: #b0b0b0;
-            font-size: 0.95rem;
+
+        /* Animated text gradient */
+        .display-4 {
+            background: linear-gradient(45deg, var(--primary-color), var(--hover-color), #ff4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: textGradient 5s ease infinite;
         }
+
+        @keyframes textGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         footer {
-            background-color: #1f1f1f;
-            color: #b0b0b0;
-            border-top: 1px solid #333333;
+            background-color: rgba(31, 31, 31, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 165, 0, 0.1);
+            padding: 1.5rem 0;
         }
-        footer p {
-            font-size: 0.875rem;
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--hover-color);
+        }
+
+        /* Loading animation for buttons */
+        .btn-custom:active::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: buttonLoading 0.6s ease infinite;
+        }
+
+        @keyframes buttonLoading {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
